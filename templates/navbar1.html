@@ -1,0 +1,35 @@
+<header>
+    <div class="container">
+        <nav>
+            <nav>
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" class="logo">
+                </div>
+            
+                <input type="checkbox" class="check" id="toggle">
+                <label for="toggle">
+                    <img src="{{ url_for('static', filename='images/icon-hamburger.svg') }}" alt="" class="hamburger">
+                </label>
+
+                
+                <ul class="nav-ul nav-ul-link">
+                    <li><a href="#">connect</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input class="search-input" type="text" placeholder="Search...">
+                <a href=""><i class="search-icon">&#128269;</i></a>
+                <!-- <button class="search-button">
+                  <i class="search-icon">&#128269;</i>
+                </button> -->
+            </div>
+
+            <div class="btn">
+                <a href="" class="btn-login">login</a>
+                <a href="" class="btn-signup">signup</a>
+            </div>
+        </nav>
+    </div>
+</header>

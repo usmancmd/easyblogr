@@ -1,0 +1,631 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    /* background-color: #f0f0f0; */
+    overflow-x: hidden;
+    
+}
+
+p {
+    font-size: 1.6rem;
+    color: var(--grayish-blue);
+    line-height: 1.6;
+}
+
+
+.container { 
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0  2.5rem;
+}
+
+/* VARIABLES */
+:root {
+    --orange: hsl(30, 100%, 50%);
+    --light-orange: hsl(40, 100%, 75%);
+    --red: hsl(0, 93%, 49%);
+    --dark-grey: hsl(0, 0, 25%);
+    --greyish-orange: hsl(30, 50%, 70%);
+    --light-greyish-0range: hsl(30, 20%, 70%);
+    --very-light-grey: hsla(0, 0%, 100%, 0.274);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* UTILITIES */
+.u-mb-small {
+    margin-bottom: 1.6rem;
+}
+
+.u-mb-medium {
+    margin-bottom: 3rem;
+}
+
+.u-mb-large {
+    margin-bottom: 5rem;
+}
+
+/**************HERADER STYLES **************/
+/**************HERADER STYLES **************/
+/**************HERADER STYLES **************/
+header {
+    width: 100%;
+    height: 7.5rem;
+    padding: 3rem 0 ;
+    /* background-color: var(--orange); */
+    background: linear-gradient(to right, var(--orange), var(--red));
+    position: relative;
+    z-index: 999;
+}
+
+.logo {
+    height: 2.3rem;
+    align-items: center;
+}
+
+.check {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    /* position: relative; */
+    /* justify-content: center; */
+}
+
+.nav-link {
+    display: flex;
+    /* position: absolute; */
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-ul-link {
+    margin-left: 4rem;
+}
+
+/* .nav-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.nav-ul li {
+    list-style: none;
+    margin: 0 1.5rem;
+}
+
+/* nav nav .nav-ul-link {
+    margin-left: 5rem;
+} */
+
+li a {
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--white);
+    /* padding-bottom: 1.5rem; */
+    position: relative;
+}
+
+
+li a:hover {
+    /* color: var(--very-light-grey); */
+    opacity: .8;
+}
+
+/************** SEARCH BAR STYLES ******************/
+ .search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--white);
+    border-radius: 25px;
+    background-color: var(--white);
+    padding: 5px 10px;
+  }
+
+  .search-container a {
+    text-decoration: none;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 25px;
+  }
+  .search-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .search-icon {
+    color: #333;
+    font-size: 20px;
+  } 
+
+/****************BUTTON STYLES  ********************/
+/****************BUTTON STYLES  ********************/
+/****************BUTTON STYLES  ********************/
+.btn-login, .btn-signup {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--orange);
+    font-weight: normal;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+}
+
+.btn-login {
+    color: var(--white);
+    margin-right: 1rem;
+}
+
+.btn-signup {
+    background-color: var(--white);
+}
+
+
+.btn-login:hover {
+    color: var(--white);
+    background-color: var(--very-light-grey);
+}
+
+.btn-signup:hover {
+    color: var(--white);
+    background: var(--very-light-grey);
+}
+
+
+
+/********************** WELCOME SECTION **********************/
+/********************** WELCOME SECTION **********************/
+/********************** WELCOME SECTION **********************/
+/********************** WELCOME SECTION **********************/
+.welcome-section {
+    background: linear-gradient(to right, var(--orange), var(--red));
+    /* background-image: url("../images/bg-pattern-intro-mobile.svg"); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-size: 50%; */
+    color: var(--white);
+    padding: 15rem 0;
+    border-radius: 0 0 0 10rem;
+}
+
+.welcome {
+    text-align: center;
+}
+
+
+
+
+.welcome-text h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+    line-height: 4.5rem;
+}
+
+.welcome-btn a {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.welcome-btn .btn-left {
+    color: var(--orange);
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+}
+
+.welcome-btn .btn-right {
+    color: var(--white);
+    background-color: var(--very-light-grey);
+    padding: 1rem 2rem;
+    border: .1rem solid var(--white);
+    border-radius: 5rem;
+
+}
+
+.welcome-btn .btn-left:hover {
+    color: var(--white);
+    background-color: var(--very-light-grey);
+}
+
+.welcome-btn .btn-right:hover {
+    color: var(--orange);
+    background-color: var(--white);
+    border: .1rem solid var(--white);
+}
+
+/******************WELCOME FEATURES *****************/
+/******************WELCOME FEATURES *****************/
+/******************WELCOME FEATURES *****************/
+/******************WELCOME FEATURES *****************/
+
+.welcome-section-2 h2 {
+    text-align: center;
+    margin-top: 10rem;
+    color: #333;
+}
+
+.welcome-2 {
+    background-color: var(--very-light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-features-img img {
+    max-width: 60rem;
+    max-height: 50rem;
+    transform: translateX(12rem);
+}
+
+section .welcome-features-header {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.welcome-text-features h3 {
+    color: #333;
+    font-size: 1.7rem;
+    padding: 1.5rem 0;
+}
+
+.welcome-text-features {
+    margin-top: 4.5rem;
+    font-weight: normal;
+    padding: 2rem;
+}
+
+.welcome-text-features p {
+    color: #333;
+}
+
+
+/************************WELCOME SECTION 3 ********************/
+.welcome-section-3 {
+    margin-top: 5rem;
+    background-color: #333;
+    /* background-size: 50%; */
+    border-radius: 0 10rem 0 10rem;
+}
+
+.welcome-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-text-features-3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding: 0 7rem;
+    margin-top: 20rem;
+}
+
+.welcome-features-img-3 img {
+    max-width: 50rem;
+    max-height: 50rem;
+}
+
+/********************WELCOME SECTION 4 ******************/
+.welcome-features-img-4 img {
+    max-width: 70rem;
+    max-height: 70rem;
+    transform: translateX(-50);
+}
+
+.Welcome-section-4 {
+    margin-top: 10rem;
+}
+
+/************************ FOOTER ************************/
+/* .footer-container {
+    margin-top: 10rem;
+}
+
+.footer {
+    padding: 7rem 0;
+    background-color: #333;
+    border-radius: 0 10rem 0 0;
+    color: var(--white);
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    row-gap: 4rem;
+    column-gap: 2rem;
+}
+
+.footer-text p {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.footer-icons a {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+
+.footer-links ul li {
+    list-style: none;
+    padding-bottom: 1.5rem;
+}
+
+.footer-links ul li a {
+    color: var(--grayish-blue);
+}
+
+.footer-links ul li a:hover {
+    color: var(--lime-green);
+} */
+
+.footer-container {
+    margin-top: 10rem;
+}
+
+.footer {
+    padding: 7rem 0;
+    background-color: #333;
+    border-radius: 0 10rem 0 0;
+    color: var(--white);
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    row-gap: 4rem;
+    column-gap: 2rem;
+}
+
+.footer-logo img {
+    width: 16rem;
+    height: 5rem;
+}
+
+.footer-icons a {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.footer-text p {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.footer-links ul li {
+    list-style: none;
+    padding-bottom: 1.5rem;
+}
+
+.footer-links ul li a {
+    color: var(--grayish-blue);
+}
+
+.footer-links ul li a:hover {
+    color: var(--lime-green);
+}
+
+
+/***************** MEDIA QUERRY *********************/
+
+/* MOBILE RESPOSIVE MENU QUERRIES */
+
+@media screen and (max-width: 832px) {
+    /* nav .btn {
+        display: none;
+    } */
+
+    nav {
+        display: inline-block;
+        /* position: relative; */
+    }
+
+
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+
+    .hamburger img {
+        width: 3rem;
+    }
+
+
+
+    nav .nav-link {
+        flex-direction: column;
+        width: 98%;
+        margin: 0 auto;
+        padding: 1rem 0;
+        margin-top: 4rem;
+        background-color: var(--white);
+        border: 1px solid skyblue;
+        border-radius: .3rem;
+        transform: translateY(-200%);
+        transition: all .5s;
+        z-index: 999;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        text-align: center;
+    }
+
+    .nav-ul-link {
+        margin-left: 0;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+    }
+
+    .btn-login {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--orange);
+    }
+
+    .btn-signup {
+        font-size: 2rem;
+        background-color: var(--orange);
+        padding: .5rem 8rem 1rem;
+        color: var(--white);
+    }
+
+    .btn-login:hover {
+        color: var(--greyish-orange);
+        /* background-color: var(--very-light-grey); */
+    }
+    
+    .btn-signup:hover {
+        color: var(--white);
+        background: var(--light-greyish-0range);
+    }
+
+    .nav-ul li {
+        margin-bottom: 1rem;
+        /* padding: 1rem 0; */
+        /* font-size: 2rem; */
+    }
+
+    .nav-ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    li a {
+        color: var(--orange);
+        /* background-color: var(--orange); */
+        /* padding: 1rem 4rem; */
+        /* border-radius: 5rem; */
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+
+    /* nav-ul li a  {
+        background: var(--orange);
+        padding: 0 2rem;
+        color: var(--white);
+        font-size: 2rem;
+        font-weight: 400;
+    } */
+
+    li a:hover {
+        color: var(--greyish-orange);
+    }
+
+    nav ul li a:hover::before {
+        opacity: 0;
+    }
+
+    /**************WELCOME SECTION ***************/
+    .welcome-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .welcome-text-features {
+        text-align: center;
+    }
+
+    .welcome-features-img img {
+        margin-top: 4rem;
+        max-width: 40rem;
+        max-height: 30rem;
+        transform: translateX(-1rem);
+    }
+
+    .Welcome-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text-features-3 {
+        /* font-size: 4rem; */
+        text-align: center;
+        margin-bottom: 25rem;
+    }
+
+    .welcome-features-img-3 img {
+        max-width: 25rem;
+        max-height: 25rem;
+    }
+
+    .welcome-section-4 {
+        width: 90%;
+    }
+    
+    .welcome-features-img-4 img {
+        /* margin-top: 4rem; */
+        max-width: 25rem;
+        max-height: 25rem;
+        /* transform: translateX(-1rem); */
+    }
+
+    .footer-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* SLIDE THE MENU WHEN THE HAMBURGER IS CLICKED */
+
+    #toggle:checked ~ .nav-link {
+        transform: translateY(1%);
+    }
+
+    #toggle:checked ~ label .hamburger {
+        border: 1px solid var(--white);
+        border-radius: .3rem;
+        padding: .4rem;
+    }
+}

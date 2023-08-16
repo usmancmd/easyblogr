@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% include 'navbar.html' %}
+{% block body %} 
+    <!-- welcome section -->
+    <section class="welcome-section">
+        <div class="container welcome moveUP">
+            <div class="welcome-text">
+                <h1 class="u-mb-small">
+                    A modern publishing platform
+                </h1>
+                <p class="u-mb-large">
+                     Grow your audience and build your online brand
+                </p>
+            </div>
+            <div class="welcome-btn">
+                <a href="" class="btn-left">Start for free</a>
+                <a href="" class="btn-right">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="Welcome-section-2">
+        <h2 class="welcome-features-header">Designed for the future</h2>
+        <div class="container welcome-2 moveUP">
+            <div class="welcome-text-features">
+                <p>
+                    <h3>
+                        Introducing an extensible editor
+                     </h3>
+                     <p class="u-mb-small">
+                         Easyblogr features an extensible intuitive interface which lets you focus on one thing: creating content.
+                         The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos.
+                     </p>
+     
+                     <h3>
+                        Robust content management
+                     </h3>
+                     <p class="u-mb-large">
+                         Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you're I full control.
+                     </p>
+                </p>
+            </div>
+
+            <div class="welcome-features-img">
+                <img src="{{ url_for('static', filename='images/illustration-editor-desktop.svg') }}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome-section-3">
+        <div class="container welcome-3 moveUP">
+            <div class="welcome-features-img-3">
+                <img src="{{ url_for('static', filename='images/illustration-phones.svg') }}" alt="">
+            </div>
+
+            <div class="welcome-text-features-3">
+                <p>
+                    <h1 class="u-mb-small">
+                        State of the Art Infrastructure
+                     </h1>
+                     <p class="u-mb-small">
+                         Easyblogr features an extensible intuitive interface which lets you focus on one thing: creating content.
+                         The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos.
+                     </p>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="welcome-section-4">
+        <div class="container welcome-2 moveUP">
+            <div class="welcome-features-img-4">
+                <img src="{{ url_for('static', filename='images/illustration-laptop-desktop.svg') }}" alt="">
+            </div>
+
+            <div class="welcome-text-features">
+                <p>
+                    <h3>
+                        Introducing an extensible editor
+                     </h3>
+                     <p class="u-mb-small">
+                         Easyblogr features an extensible intuitive interface which lets you focus on one thing: creating content.
+                         The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos.
+                     </p>
+     
+                     <h3>
+                        Robust content management
+                     </h3>
+                     <p class="u-mb-large">
+                         Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you're I full control.
+                     </p>
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
