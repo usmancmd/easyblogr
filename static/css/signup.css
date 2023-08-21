@@ -1,0 +1,75 @@
+h1 {
+    color: darkblue;
+    font-size:60px;
+}
+
+html {
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background: white;
+}
+
+
+/*/* VARIABLES */
+:root {
+    --orange: hsl(30, 100%, 50%);
+  }
+
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-control {
+    margin: 0 auto;
+}
+
+.form .input-control {
+    width: 20rem;
+    height: 1.8rem;
+    border: .1rem solid #ccc;
+    border-radius: .3rem;
+    font-size: 16px;
+    padding: 0 .5rem;
+}
+
+.form .input-control:focus {
+    outline: .2rem solid #FFD580;
+}
+
+div .btn-signup {
+    display: flex;
+    justify-content: center;
+}
+
+.button[type="submit"] {
+    padding: .6rem 5rem;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button[type="submit"]:hover {
+  background-color: #FF994E;
+}

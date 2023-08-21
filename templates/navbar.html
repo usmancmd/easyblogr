@@ -2,8 +2,9 @@
     <div class="container">
         <nav class="nav-header container">
             <nav>
-                <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" class="logo">
-                
+                <!-- <img src="{{ url_for('static', filename='images/EasyBlogr-logo-crop.png') }}" alt="" class="logo"> -->
+                <a href="{{ url_for('index') }}"><h1 class="text-logo">EasyBlogr</h1></a>
+
             </nav>
             <input type="checkbox" class="check" id="toggle">
             <label for="toggle">
@@ -11,13 +12,13 @@
             </label>
             <div class="nav-link">
                 <ul class="nav-ul nav-ul-link">
-                    <li><a href="#">blogs</a></li>
-                    <li><a href="#">about</a></li>
+                    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
                 
                 <div class="btn">
-                    <a href="" class="btn-login">login</a>
-                    <a href="" class="btn-signup">signup</a>
+                    <a href="{{ url_for('login') }}" class="btn-login">login</a>
+                    <a href="{{ url_for('signup') }}" class="btn-signup">signup</a>
                 </div>
             </div>
         </nav>

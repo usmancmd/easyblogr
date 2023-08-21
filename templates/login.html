@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+
+	<!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+</head>
+<body>
+
+	<div class="signup">
+		<div class="container">
+			<form method="POST" class="form">
+				{{ login.hidden_tag() }}
+
+				<div>
+					<br/>
+					{{ login.email(class=" input-control input") }}
+				</div>
+				<br/>
+
+				<div>
+					<br/>
+					{{ login.password(class=" input-control") }}
+				</div>
+				<br/>
+
+				
+				<br/>
+				<div class="btn-signup">
+					{{ login.submit(class="btn-login button") }}
+				</div>
+
+
+			</form>
+		</div>	
+	</div>
+	
+</body>
+</html>
