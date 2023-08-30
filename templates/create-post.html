@@ -1,0 +1,51 @@
+{% block head%}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create-post.css') }}">
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+
+{% for message in get_flashed_messages() %}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+{% endfor %}
+
+
+
+<!-- <h1>Add Blog Post...</h1> -->
+	<br/>
+<div class="post-container">
+	<form method="POST" enctype="multipart/form-data">
+		{{ form.hidden_tag() }}
+
+
+		{{ form.title(class="form-title") }}
+		<br/>
+
+		{{ form.image(class="form-image") }}
+		<br/>
+		
+
+		{{ form.content(class="form-content") }}
+		<br/>
+
+		<div class="btn-p">
+			{{ form.submit(class="btn-publish") }}	
+		</div>
+		
+
+
+	</form>
+	{{ ckeditor.load() }}
+ 	{{ ckeditor.config(name='content', height=200) }}
+
+</div>
+
+
+{% endblock %}

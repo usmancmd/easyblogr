@@ -81,7 +81,6 @@ header div nav a {
 
 
 .text-logo {
-    margin-top: 3rem 0;
     font-size: 4rem;
     letter-spacing: .1rem;
     font-weight: normal;
@@ -173,6 +172,10 @@ li a.btn-links:hover {
     opacity: .8;
 }
 
+.btn-logout {
+    background-color: white;
+}
+
 li a.create-btn {
     font-size: 1.7rem;
     font-weight: normal;
@@ -221,27 +224,11 @@ li a.create-btn:hover {
   align-items: center;
 }
 
-.search {
-  width: 20rem;
-  height: 3.6rem;
-  padding: 0 1rem;
-  font-family: 'Source Sans Pro', sans-serif;
-  border: .1rem solid white;
-  border-radius: .8rem 0 0 .8rem;
-  margin-right: .1rem;
-  font-size: 1.5rem;
-}
-
-.search:focus {
-    outline: .1rem solid #FFD580;
-    border: .1rem solid #FFD580;
-}
-
-.left-side {
-/*  width: 100%;*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;                                                          
+p.user-name {
+/*    font-size: 4rem;*/
+/*    font-weight: normal;*/
+    padding: 0 .5rem;
+    color: white;
 }
 
 .avatar img {
@@ -256,6 +243,7 @@ li a.create-btn:hover {
 .chevron {
     margin-left: .5rem;
 }
+
 
 
 

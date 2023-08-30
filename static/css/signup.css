@@ -16,6 +16,7 @@ body {
 /*/* VARIABLES */
 :root {
     --orange: hsl(30, 100%, 50%);
+    --light-grey: hsla(0, 0%, 100%, 0.452);
   }
 
 .signup {
@@ -28,6 +29,7 @@ body {
 .container {
     padding: 2rem;
     border-radius: .5rem;
+    border: .1px solid #ddd;
     background-color: white;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
 }

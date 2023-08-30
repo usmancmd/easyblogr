@@ -22,7 +22,9 @@ p {
 
 
 .article-section {
-    background-color: var(--very-light-grey);
+/*    background-color: var(--very-light-grey);*/
+    background-color: var(--dark-grey);
+    background-color: white;
     margin: 0 auto;
 
 }
@@ -30,18 +32,20 @@ p {
 .article-section h2 {
     font-size: 3rem;
     padding-top: 4rem;
-    color: var(--grayish-blue);
+    color: var(--dark-blue);
+
 }
 
 .article {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     row-gap: 4rem;
-    column-gap: 1rem;
+    column-gap: 4rem;
 }
 
 .article-box {
-    background-color: white;
+/*    background-color: white;*/
+    background: var(--dark-grey);
     margin-bottom: 5rem;
     background-origin: 1px solid transparent;
     border-radius: .5rem;
@@ -62,14 +66,27 @@ p {
 }
 
 .article-heading {
-    font-size: 1.7rem;
-    font-weight: normal;
+    font-size: 2.5rem;
+    font-weight: 8rem;
+ 
+}
+
+.article-heading a {
+    text-decoration: none;
     color: var(--dark-blue);
+
+
 }
 
 .article-excerpt {
     font-size: 1.3rem;
 }
+
+p.article-excerpt a {
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
 
 /******************footer*******************/
 
