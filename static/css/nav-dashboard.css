@@ -91,7 +91,6 @@ header div nav a {
     font-weight: normal;
     font-family: 'Chewy', cursive;
     color: var(--white);
-    padding-bottom: 5rem;
 }
 
 .check {
@@ -109,17 +108,16 @@ header div nav a {
     flex-wrap: wrap;
 } */
 
-nav.nav-header {
+nav {
     display: flex;
     flex-direction: row;
-    position: relative; 
-    margin-top: 7.5rem;
+    /* position: relative; */
     /* justify-content: center; */
 }
 
 .nav-link {
     display: flex;
-    position: relative;
+    /* position: absolute; */
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -128,12 +126,10 @@ nav.nav-header {
 .nav-ul {
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .nav-ul-link {
     margin-left: 4rem;
-    margin-bottom: 7.4rem;
 }
 
 /* .nav-ul {
@@ -160,11 +156,6 @@ li a {
     position: relative;
 }
 
-/*.nav-ul-link li a {
-    margin-bottom: 6.5;
-
-}*/
-
 
 li a:hover {
     /* color: var(--very-light-grey); */
@@ -183,9 +174,8 @@ li a:hover {
     color: var(--orange);
     font-weight: normal;
     text-decoration: none;
-    padding: .9rem 2.8rem;
+    padding: 1rem 3rem;
     border-radius: 5rem;
-    margin-bottom: 7.6rem;
 }
 
 .btn-signup {
@@ -201,7 +191,7 @@ li a:hover {
 
 .left-side {
 /*	width: 100%;*/
-    display: flex;
+  	display: flex;
   	flex-direction: row;
     justify-content: center;
   	align-items: center;  
@@ -213,67 +203,11 @@ li a:hover {
 	margin-left: 2rem;
 	background-color: white;
   	vertical-align: middle;
-  	width: 38px;
-  	height: 38px;
+  	width: 40px;
+  	height: 40px;
   	border-radius: 50%;
 }
 
 .chevron {
 	margin-left: .5rem;
 }
-
-.dropdown-links {
-/*    margin-left: 3rem;*/
-}
-
-.dropdown {
-    display: block;
-/*    flex-direction: row;*/
-/*    margin-top: 7.6rem;*/
-
-/*    margin: 3rem 0;*/
-}
-
-.dropdown ul.profile-menu li {
-    list-style: none;
-
-}
-
-.dropdown ul.profile-menu li a {
-    padding: 2rem 0;
-    color: var(--orange);
-    font-size: 1.5rem;
-    font-weight: normal;
-}
-
-ul.profile-menu {
-    visibility: hidden;
-    margin-top: .2rem;
-    padding: 1rem;
-    background-color: white;
-    border: .1rem solid #ccc;
-    border-radius: 10px;
-}
-
-/*ul.profile-menu:hover {
-    visibility: visible;
-}
-*/
-.dropdown div a img:hover ul.profile-menu {
-    visibility: visible;
-}
-
-
-/*.chevron:hover {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10%;
-    border: .1rem solid #ccc;
-    transform: translateY(9rem);
-}*/
-
-/*.dropdown.active {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1) translateX(5px);
-}*/

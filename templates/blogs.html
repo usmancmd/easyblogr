@@ -4,16 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blogs.css') }}">
 {% endblock %}
 
-{% if current_user.is_authenticated %}
-
-    {% include 'nav-blog.html' %}
-
-{% else %}
-
-    {% include 'nav-blog-1.html' %}
-
-{% endif %}
-
+{% include 'nav-blog.html' %}
 
 {% block body %}
 <section class="article-section">
@@ -21,31 +12,30 @@
 
             <div class="about-text">
                 <h2 class="u-mb-small heading-secondary">
-                    Latest Posts
+                    Latest Articles
                 </h2>
                 <p class="u-mb-small">
-                    Get the latest news and updates...
+                    Get the latest new and updates on financial issues from out blog
                 </p>
             </div>
 
             <div class="article">
-                {% for post in posts %}
                 <div class="article-box">
-                    <img src="{{ url_for('static', filename='blogs_img/' + post.image) }}" alt="Image">
+                    <img src="./images/image-currency.jpg" alt="" class="u-mb-small">
                     <div class="article-content">
                         <p class="article-author u-mb-small">
-                            By {{ post.author }}
+                            By Claire Robinson
                         </p>
                         <h4 class="article-heading u-mb-small">
-                            <a href="/read_more/{{ post.id }}">{{ post.title }}</a>
+                            Receive money in any currency with no fees
                         </h4>
                         <p class="article-excerpt">
-                            <a href="/read_more/{{ post.id }}">{{ post.description | safe }}</a>
+                            The world is getting smaller and we’re becoming more mobile. So why should you be 
+                            forced to only receive money in a single …
                         </p>
                     </div>
                 </div>
-                {% endfor %}
-                <!-- <div class="article-box">
+                <div class="article-box">
                     <img src="./images/image-restaurant.jpg" alt="" class="u-mb-small">
                     <div class="article-content">
                         <p class="article-author u-mb-small">
@@ -151,7 +141,7 @@
                             It’s easy to request an invite through the site ...
                         </p>
                     </div>
-                </div> -->
+                </div>
             </div>
 
 

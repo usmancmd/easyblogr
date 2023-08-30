@@ -23,7 +23,7 @@ class LoginForm(FlaskForm):
 	submit = SubmitField("login")
 
 class PostForm(FlaskForm):
-	# username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
+	username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
 	title = StringField("Title", render_kw={'placeholder': 'title'}, validators=[DataRequired()])
 	content = CKEditorField('Content', render_kw={'placeholder': 'start typing here'}, validators=[DataRequired()])
 	tag = StringField("Slug", render_kw={'placeholder': 'slug'}, validators=[DataRequired()])
@@ -34,20 +34,20 @@ class SearchForm(FlaskForm):
 	submit = SubmitField("Search")
 
 class BlogPostForm(FlaskForm):
-	# username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
+	username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
 	title = StringField("Title", render_kw={'placeholder': 'title'}, validators=[DataRequired()])
 
-	# def validate_image(form, field):
-	# 	if field.data:
-	# 		file_size = len(field.data.read())
-	# 		max_size = 10 * 1024 * 1024  # 10MB
-	# 		if file_size > max_size:
-	# 			raise ValidationError('File size must not exceed 10MB.')
+	def validate_image(form, field):
+		if field.data:
+			file_size = len(field.data.read())
+			max_size = 10 * 1024 * 1024  # 10MB
+			if file_size > max_size:
+				raise ValidationError('File size must not exceed 10MB.')
     
-	image = FileField('Image', validators=[
-	FileRequired(),
-	FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!')
-	])
+		image = FileField('Image', validators=[
+		FileRequired(),
+		FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!')
+		])
 	content = TextAreaField('Content', render_kw={'placeholder': 'start typing here...'}, validators=[DataRequired()])
     
-	submit = SubmitField('Publish')
+	submit = SubmitField('Submit')

@@ -6,6 +6,7 @@
 	<title></title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
 
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
 
 	<!-- Bootstrap CSS -->
@@ -16,36 +17,24 @@
 	<div class="signup">
 		<div class="container">
 			<form method="POST" class="form">
-				{{ form.hidden_tag() }}
-
-				{% for message in get_flashed_messages() %}
-	
-				<div class="" role="">
-	  				{{ message }}
-	  				<!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
-				</div>
-
-				{% endfor %}
+				{{ login.hidden_tag() }}
 
 				<div>
 					<br/>
-					{{ form.email(class=" input-control input") }}
+					{{ login.email(class=" input-control input") }}
 				</div>
 				<br/>
 
 				<div>
 					<br/>
-					{{ form.password(class=" input-control") }}
+					{{ login.password(class=" input-control") }}
 				</div>
 				<br/>
 
 				
 				<br/>
 				<div class="btn-signup">
-					{{ form.submit(class="btn-login button") }}
-				</div>
-				<div style="text-align: center">
-					<p>Don't have an account signup <a href="{{url_for('signup')}}">here</a></p>
+					{{ login.submit(class="btn-login button") }}
 				</div>
 
 
