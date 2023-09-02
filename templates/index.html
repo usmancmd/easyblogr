@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 
-{% include 'navbar.html' %}
+{% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        
+{% endblock %}
+
+
+{% include 'nav-test.html' %}
 {% block body %} 
     <!-- welcome section -->
     <section class="welcome-section">
         <div class="container welcome moveUP">
             <div class="welcome-text">
                 <h1 class="u-mb-small">
-                    A modern publishing platform
+                    A modern publishing <span>platform</span>
                 </h1>
                 <p class="u-mb-large">
                      Grow your audience and build your online brand
@@ -15,12 +21,12 @@
             </div>
             <div class="welcome-btn">
                 <a href="{{ url_for('signup') }}" class="btn-left">Start for free</a>
-                <a href="{{ url_for('dashboard') }}" class="btn-right">Learn More</a>
+                <a href="{{ url_for('about') }}" class="btn-right">Learn More</a>
             </div>
         </div>
     </section>
     
-    <section class="Welcome-section-2">
+    <section class="welcome-section-2">
         <h2 class="welcome-features-header">Designed for the future</h2>
         <div class="container welcome-2 moveUP">
             <div class="welcome-text-features">
@@ -57,11 +63,10 @@
             <div class="welcome-text-features-3">
                 <p>
                     <h1 class="u-mb-small">
-                        State of the Art Infrastructure
+                        Discover the State of the Art in Infrastructure.
                      </h1>
                      <p class="u-mb-small">
-                         Easyblogr features an extensible intuitive interface which lets you focus on one thing: creating content.
-                         The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos.
+                         Get ready to dive into the fascinating world of infrastructure development with our curated collection of articles, insights, and expert analysis. Whether you're an industry professional, a technology enthusiast, or simply curious about the latest advancements, our blog app is your ultimate destination.
                      </p>
                 </p>
             </div>
@@ -78,18 +83,17 @@
             <div class="welcome-text-features">
                 <p>
                     <h3>
-                        Introducing an extensible editor
+                        Experience Free, Open, and Simple.
                      </h3>
                      <p class="u-mb-small">
-                         Easyblogr features an extensible intuitive interface which lets you focus on one thing: creating content.
-                         The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos.
+                         Discover a refreshing approach to blogging with our Free, Open, and Simple platform. We believe in the power of unrestricted creativity and open exchange of ideas, making it easy for you to share your thoughts with the world.
                      </p>
      
                      <h3>
-                        Robust content management
+                        Empowering Writers of All Levels
                      </h3>
                      <p class="u-mb-large">
-                         Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you're I full control.
+                         Our user-friendly interface and intuitive design ensure a seamless blogging experience. Whether you're a seasoned writer or just starting your blogging journey, our platform is here to support you every step of the way. No complicated setup or technical skills required – just focus on expressing yourself and let us handle the rest.
                      </p>
                 </p>
             </div>
