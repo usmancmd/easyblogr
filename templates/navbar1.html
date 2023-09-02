@@ -1,105 +1,279 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <style type="text/css">
+    /* Utilities */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-* {box-sizing: border-box;}
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    a {
+      text-decoration: none;
+    }
 
-.nav-container {
-    background: #ccc;
-}
+    li {
+      list-style: none;
+    }
 
-.topnav {
-  overflow: hidden;
-/*  background-color: #e9e9e9;*/
-}
+        /* VARIABLES */
+        :root {
+            --orange: hsl(30, 100%, 50%);
+            --light-orange: hsl(40, 100%, 75%);
+            --red: hsl(0, 93%, 49%);
+            --dark-grey: hsl(0, 0, 25%);
+            --greyish-orange: hsl(30, 50%, 70%);
+            --light-greyish-0range: hsl(30, 20%, 70%);
+            --very-light-grey: hsla(0, 0%, 100%, 0.274);
+            --light-grey: hsla(0, 0%, 100%, 0.452);
+            --white: hsl(0, 0%, 100%);
+        }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    /* Navbar Styling */
+    .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 5rem;
+          height: 4.5rem;
+          background: linear-gradient(to right, var(--orange), var(--red));
+          color: #fff;
+    }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
 
-.topnav a.active {
-  background-color: #2196F3;
-  color: white;
-}
+    /* logo */
+    .text-logo a {
+          font-size: 2.5rem;
+          font-family: 'Chewy', cursive;
+          color:  white;
+          letter-spacing: 1px;
+    }
 
-.topnav .search-container {
-  float: right;
-}
+    /* Navbar Menu */
+    .menu {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+    }
 
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
+    .create-link {
+          margin-right: 1rem;
+    }
 
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
+    .btn-links a {
+          color: white;
+          padding: 5px 6px;
+          margin: 0 .5rem;
+    }
 
-.topnav .search-container button:hover {
-  background: #ccc;
-}
+    .menu .btn-links a:hover {
+          background-color: white;
+          color: var(--orange);
+          border-radius: 5px;
+          transition: 0.3s ease;
+    }
 
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
-}
-</style>
+
+    .dropdown {
+          background-color: linear-gradient(to right, var(--orange), var(--red));
+          padding: 1em 0;
+          position: absolute;
+          display: none;
+          border-radius: 8px;
+          top: 35px;
+    }
+
+    .dropdown li + li {
+          margin-top: 10px;
+    }
+
+    .dropdown li {
+          padding: 0.5em 1em;
+          width: 8em;
+          text-align: center;
+    }
+
+    .dropdown li:hover {
+          background-color: var(--white);
+    }
+
+    /* Checkbox hack */
+    input[type=checkbox] {
+          display: none;
+    }
+
+    .avatar img {
+          background-color: white;
+          vertical-align: middle;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: .2rem;
+    }
+
+    .hamburger {
+          display: none;
+          font-size: 30px;
+          user-select: none;
+    }
+
+    .dropdown-popup {
+          opacity: 0;
+          list-style-type: none;
+          position: absolute;
+          width: 100px;
+          z-index: 2;
+          background: white;
+          border: 1px solid #ccc;
+          border-radius: 1rem;
+
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 7rem;
+          margin-top: 2rem;
+          padding: 1rem;
+
+          transform: translateX(-40px);
+          transition: opacity .15s easy-out;
+        }
+
+        .has-dropdown-popup {
+          list-style-type: none;
+        }
+
+        .drop-item a {
+
+          margin: 3rem 0;
+          color: orangered;
+          height: 100%;
+          width: 100%;
+        }
+
+        .btn-dropdown-item {
+          display: none;
+        }
+
+        .has-dropdown:focus-within .dropdown-popup {
+          opacity: 1;
+        }
+
+    @media ( max-width: 768px) {
+      .navbar {
+          padding: 0 1.5rem;
+      }
+
+      .menu {
+            display: none;
+            position: absolute;
+            background: linear-gradient(to right, var(--orange), var(--red));
+            border-radius: 1rem;
+            right: 0;
+            left: 0;
+            top: 80px;
+            text-align: center;
+            padding: 16px 0;
+      }
+
+      .avatar-link {
+            display: none;
+      }
+
+      .create-link {
+            margin-right: 0;
+      }
+
+
+      .has-dropdown {
+            display: none;
+      }
+
+      .menu li:hover {
+            display: inline-block;
+            transition: 0.3s ease;
+      }
+
+      .menu li + li {
+            margin-top: 12px;
+      }
+
+      input[type=checkbox]:checked ~ .menu {
+            display: block;
+      }
+
+      .hamburger {
+            display: block;
+
+      }
+
+      .btn-dropdown-item {
+            display: block;
+      }
+
+      .btn-dropdown-item a{
+            color: white;
+      }
+
+      .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+      }
+
+      .dropdown li:hover {
+            background-color: #4c9e9e;
+      }
+
+            
+    }
+  </style>
 </head>
 <body>
-
-    <div class="nav-container">
-        <div class="topnav container">
-          <a class="active" href="#home">Home</a>
-          <a href="#about">Blogs</a>
-          <a href="#contact">About</a>
-          <div class="search-container">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </div>
+  <nav class="navbar container">
+        <!-- logo -->
+        <div class="text-logo">
+        <li><a href="/">EasyBlogr</a></li>
         </div>
-    </div>
 
+        <!-- Navigation menu -->
+    <ul class="nav-links">
+
+      <!-- Using the checkbox hack -->
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+      <div class="menu">
+        <li class="btn-links links"><a href="/">Home</a></li>
+        <li class="btn-links links"><a href="/">Blogs</a></li>
+        <li class="btn-links "><a href="about">About</a></li>
+        <li class="btn-links create-link"><a href="/create-post">Add Post</a></li>
+                <li class="btn-links btn-dropdown-item"><a href="/profile">Profile</a></li>
+                <li class="btn-links btn-dropdown-item"><a href="/logout">Logout</a></li>
+        <li class="avatar-link avatar"><a href="/"><a href="{{ url_for('profile') }}" ><img src="{{ url_for('static', filename='images/_c15b5e58-7719-4c16-a00b-0eb16b0783ff.jpeg') }}"></a></a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="chevron"><img src="{{ url_for('static', filename='images/icon-arrow-light.svg') }}"></a>
+
+                    <ul class="dropdown-popup">
+                        <li class="dropdown-item"><a href="/profile">Profile</a></li>
+                        <li class="dropdown-item"><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+      </div>
+    </ul>
+        
+    </nav>
 </body>
 </html>
