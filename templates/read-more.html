@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/read-more.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="blog-container">
+        <div class="blog-title u-mb-small">
+            <h1>{{ post.title }}</h1>
+        </div>
+
+        <div class="author u-mb-small">
+
+            {% if author_image %}
+                <li class="avatar-link avatar"><a href="/profile" ><img src="{{ url_for('static', filename='profile_img/' + author_image) }}"></a></li>
+            {% else %}
+                <li class="avatar-link avatar"><a href="/profile" ><img src="{{ url_for('static', filename='profile_img/avatar-default-symbolic.svg') }}"></a></li>
+            {% endif %}
+
+            <div class="author-details">
+                <li><a href="#">{{ post.author }}</a></li>
+                <li class="date-posted">{{ formatted_date }}</li>
+            </div>
+        </div>
+
+        <div class="blog-image u-mb-large">
+            <img src="{{ url_for('static', filename='blogs_img/' + post.image) }}" alt="Image">
+        </div>
+
+        <div class="blog-content">
+            {{ post.content | safe }}
+        </div>
+
+        <div class="comments">
+            <h2>Comments</h2>
+            {% for comment, fullname, profile_pic in comments_details %}
+            <div class="comment-wrapper">
+                <div class="comment-details">
+                    {% if profile_pic %}
+                        <li class="avatar-link avatar"><a href="/profile" ><img src="{{ url_for('static', filename='profile_img/' + profile_pic) }}"></a></li>
+                    {% else %}
+                        <li class="avatar-link avatar"><a href="/profile" ><img src="{{ url_for('static', filename='profile_img/avatar-default-symbolic.svg') }}"></a></li>
+                    {% endif %}
+
+                    <li><a href="#"> 
+                        {{ fullname }}
+                    </a></li>
+                </div>
+                <div class="comment-content">
+                        {{ comment.content }}
+                </div>
+                <div class="comment-time">
+                    5 mins ago
+                </div>
+            </div>
+            {%  endfor %}
+        </div>
+            
+
+        <br/>
+        <div>
+            <form method="POST" class="form">
+                {{ form.hidden_tag() }}
+
+                {% for message in get_flashed_messages() %}
+
+                <div class="" role="">
+                    {{ message }}
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+                </div>
+
+                {% endfor %}
+
+                <div>
+                    <br/>
+                    {{ form.comment(class="comment-field") }}
+                </div>
+                <br/>
+                <div class="btn-comment">
+                    {{ form.submit(class="btn-comment button") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+    {% include 'footer.html' %}
+{% endblock %}

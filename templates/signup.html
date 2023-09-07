@@ -27,7 +27,7 @@
 				</div>
 	
 				{% endfor %}
-
+				<h2 class="form-title">Signup</h2>
 				<div>
 					<br/>
 					{{ form.firstname(class=" input-control input") }}
@@ -36,6 +36,21 @@
 				<div>
 					<br/>
 					{{ form.lastname(class=" input-control input") }}
+				</div>
+				<br/>
+				<div>
+					<br/>
+					{{ form.username(class=" input-control input") }}
+				</div>
+				<br/>
+				<!-- <div>
+					<br/>
+					{{ form.about_author(class=" input-control input") }}
+				</div>
+				<br/> -->
+				<div>
+					<br/>
+					{{ form.profile_pic(class=" form-image input") }}
 				</div>
 				<br/>
 				<div>
@@ -60,7 +75,7 @@
 				<div class="btn-signup">
 					{{ form.submit(class="btn-signup button") }}
 				</div>
-				<div style="text-align: center">
+				<div style="text-align: center; ">
 					<p>Already have an account login <a href="{{url_for('login')}}">here</a></p>
 				</div>
 

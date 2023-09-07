@@ -1,25 +1,14 @@
-{%  extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blogs.css') }}">
 {% endblock %}
 
-{% if current_user.is_authenticated %}
-
-    {% include 'nav-blog.html' %}
-
-{% else %}
-
-    {% include 'nav-blog-1.html' %}
-
-{% endif %}
-
-
 {% block body %}
 <section class="article-section">
         <div class="blogs-container">
 
-            <div class="about-text">
+            <div class="blogs-header-text">
                 <h2 class="u-mb-small heading-secondary">
                     Latest Posts
                 </h2>
@@ -31,127 +20,22 @@
             <div class="article">
                 {% for post in posts %}
                 <div class="article-box">
-                    <img src="{{ url_for('static', filename='blogs_img/' + post.image) }}" alt="Image">
+                    <div>
+                        <img src="{{ url_for('static', filename='blogs_img/' + post.image) }}" alt="Image">
+                    </div>
                     <div class="article-content">
                         <p class="article-author u-mb-small">
                             By {{ post.author }}
                         </p>
                         <h4 class="article-heading u-mb-small">
-                            <a href="/read_more/{{ post.id }}">{{ post.title }}</a>
+                            <a href="/blogs/{{ post.id }}">{{ post.title }}</a>
                         </h4>
                         <p class="article-excerpt">
-                            <a href="/read_more/{{ post.id }}">{{ post.description | safe }}</a>
+                            <a class="article-desc" href="/blogs/{{ post.id }}">{{ get_short_description(post.description) | safe }}</a>
                         </p>
                     </div>
                 </div>
                 {% endfor %}
-                <!-- <div class="article-box">
-                    <img src="./images/image-restaurant.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Wilson Hutton
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Treat yourself without worrying about money
-                        </h4>
-                        <p class="article-excerpt">
-                            Our simple budgeting feature allows you to separate out your spending and set 
-                        realistic limits each month. That means you …
-                        </p>
-                    </div>
-                </div>
-                <div class="article-box">
-                    <img src="./images/image-plane.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Wilson Hutton
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Take your Easybank card wherever you go
-                        </h4>
-                        <p class="article-excerpt">
-                            We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
-                            while you’re abroad. We’ll even show you …
-                        </p>
-                    </div>
-                </div>
-                <div class="article-box">
-                    <img src="./images/image-confetti.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Claire Robinson
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Our invite-only Beta accounts are now live!
-                        </h4>
-                        <p class="article-excerpt">
-                            After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-                            It’s easy to request an invite through the site ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="article-box">
-                    <img src="./images/image-currency.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Claire Robinson
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Receive money in any currency with no fees
-                        </h4>
-                        <p class="article-excerpt">
-                            The world is getting smaller and we’re becoming more mobile. So why should you be 
-                            forced to only receive money in a single …
-                        </p>
-                    </div>
-                </div>
-                <div class="article-box">
-                    <img src="./images/image-restaurant.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Wilson Hutton
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Treat yourself without worrying about money
-                        </h4>
-                        <p class="article-excerpt">
-                            Our simple budgeting feature allows you to separate out your spending and set 
-                        realistic limits each month. That means you …
-                        </p>
-                    </div>
-                </div>
-                <div class="article-box">
-                    <img src="./images/image-plane.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Wilson Hutton
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Take your Easybank card wherever you go
-                        </h4>
-                        <p class="article-excerpt">
-                            We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
-                            while you’re abroad. We’ll even show you …
-                        </p>
-                    </div>
-                </div>
-                <div class="article-box">
-                    <img src="./images/image-confetti.jpg" alt="" class="u-mb-small">
-                    <div class="article-content">
-                        <p class="article-author u-mb-small">
-                            By Claire Robinson
-                        </p>
-                        <h4 class="article-heading u-mb-small">
-                            Our invite-only Beta accounts are now live!
-                        </h4>
-                        <p class="article-excerpt">
-                            After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-                            It’s easy to request an invite through the site ...
-                        </p>
-                    </div>
-                </div> -->
             </div>
 
 

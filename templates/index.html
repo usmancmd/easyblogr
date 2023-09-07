@@ -2,11 +2,8 @@
 
 {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-        
 {% endblock %}
 
-
-{% include 'nav-test.html' %}
 {% block body %} 
     <!-- welcome section -->
     <section class="welcome-section">
@@ -89,16 +86,15 @@
                          Discover a refreshing approach to blogging with our Free, Open, and Simple platform. We believe in the power of unrestricted creativity and open exchange of ideas, making it easy for you to share your thoughts with the world.
                      </p>
      
-                     <h3>
+                     <!-- <h3>
                         Empowering Writers of All Levels
                      </h3>
                      <p class="u-mb-large">
                          Our user-friendly interface and intuitive design ensure a seamless blogging experience. Whether you're a seasoned writer or just starting your blogging journey, our platform is here to support you every step of the way. No complicated setup or technical skills required – just focus on expressing yourself and let us handle the rest.
-                     </p>
+                     </p> -->
                 </p>
             </div>
         </div>
     </section>
-
-{% include 'footer.html' %}
+    {% include 'footer.html' %}
 {% endblock %}

@@ -10,12 +10,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
     {% endblock %}
 </head>
 <body>
-    {% block body %} {% endblock %}
+  {% set navbar_template = {
+    'blogs': 'navbar1.html',
+    'profile': 'navbar1.html',
+    'about': 'navbar1.html',
+    'contacts': 'navbar1.html',
+    'read_more': 'navbar1.html',
+    'create': 'navbar1.html'
+  } %}
+  
+  {% if current_user.is_authenticated and request.endpoint in navbar_template %}
+    {% include navbar_template[request.endpoint] %}
+  {% else %}
+    {% include 'navbar.html' %}
+  {% endif %}
+  
+  {% block body %}
+    <!-- content goes here -->
+  {% endblock %}
 </body>
 </html>

@@ -27,6 +27,7 @@
 
 				{% endfor %}
 
+				<h2 class="form-title">Login</h2>
 				<div>
 					<br/>
 					{{ form.email(class=" input-control input") }}
@@ -44,7 +45,7 @@
 				<div class="btn-signup">
 					{{ form.submit(class="btn-login button") }}
 				</div>
-				<div style="text-align: center">
+				<div style="text-align: center; ">
 					<p>Don't have an account signup <a href="{{url_for('signup')}}">here</a></p>
 				</div>
 
