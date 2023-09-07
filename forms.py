@@ -9,18 +9,27 @@ from flask_wtf.file import FileField
 class SignupForm(FlaskForm):
 	firstname = StringField("firstname", render_kw={'placeholder': 'firstname'}, validators=[DataRequired()])
 	lastname = StringField("lastname", render_kw={'placeholder': 'lastname'}, validators=[DataRequired()])
-	username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
+	username = StringField("Username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
 	email = StringField("email", render_kw={'placeholder': 'email'}, validators=[DataRequired()])
-	about_author = TextAreaField("About Author")
+	about_author = TextAreaField("About Author", render_kw={'placeholder': 'About Author', 'rows': 5})
+	profile_pic = FileField("Profile Pic", render_kw={'placeholder': 'Choose your profile image'},)
 	password = PasswordField('Password', render_kw={'placeholder': 'Password'}, validators=[DataRequired(), EqualTo('confirm_password', message='Passwords Must Match!')])
 	confirm_password = PasswordField('confirm password', render_kw={'placeholder': 'confirm password'}, validators=[DataRequired()])
-	profile_pic = FileField("Profile Pic")
 	submit = SubmitField("signup")
 
 class LoginForm(FlaskForm):
 	email = StringField("email", render_kw={'placeholder': 'email'}, validators=[DataRequired()])
 	password = PasswordField('password', render_kw={'placeholder': 'password'}, validators=[DataRequired()])
 	submit = SubmitField("login")
+
+class ProfileForm(FlaskForm):
+	firstname = StringField("Firstname", validators=[DataRequired()])
+	lastname = StringField("Lastname", validators=[DataRequired()])
+	username = StringField("Username", validators=[DataRequired()])
+	email = StringField("Email", validators=[DataRequired()])
+	about_author = TextAreaField("About Author", render_kw={'rows': 5})
+	profile_pic = FileField("Profile Pic")
+	submit = SubmitField("Update")
 
 class PostForm(FlaskForm):
 	# username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
@@ -29,12 +38,15 @@ class PostForm(FlaskForm):
 	tag = StringField("Slug", render_kw={'placeholder': 'slug'}, validators=[DataRequired()])
 	submit = SubmitField("Submit")
 
+class CommentForm(FlaskForm):
+	comment = TextAreaField("About Author", render_kw={'placeholder': 'comment', 'rows': 4})
+	submit = SubmitField("comment")
+
 class SearchForm(FlaskForm):
 	searchfield = StringField("Search", render_kw={'placeholder': 'search...'}, validators=[DataRequired()])
 	submit = SubmitField("Search")
 
 class BlogPostForm(FlaskForm):
-	# username = StringField("username", render_kw={'placeholder': 'username'}, validators=[DataRequired()])
 	title = StringField("Title", render_kw={'placeholder': 'title'}, validators=[DataRequired()])
 
 	# def validate_image(form, field):
