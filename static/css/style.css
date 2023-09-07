@@ -343,48 +343,7 @@ section .welcome-features-header {
     margin-top: 10rem;
 }
 
-/************************ FOOTER ************************/
-/* .footer-container {
-    margin-top: 10rem;
-}
 
-.footer {
-    padding: 7rem 0;
-    background-color: #333;
-    border-radius: 0 10rem 0 0;
-    color: var(--white);
-}
-
-.footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    row-gap: 4rem;
-    column-gap: 2rem;
-}
-
-.footer-text p {
-    font-size: 1.2rem;
-    font-weight: normal;
-}
-
-.footer-icons a {
-    display: inline-block;
-    padding-right: 1rem;
-}
-
-
-.footer-links ul li {
-    list-style: none;
-    padding-bottom: 1.5rem;
-}
-
-.footer-links ul li a {
-    color: var(--grayish-blue);
-}
-
-.footer-links ul li a:hover {
-    color: var(--lime-green);
-} */
 
 .footer-container {
     margin-top: 10rem;

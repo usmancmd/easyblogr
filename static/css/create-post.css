@@ -1,12 +1,12 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
 }
 
 :root {
-	--very-light-grey: hsla(0, 0%, 100%, 0.274);
-	--light-grey: hsla(344, 100%, 100%, 0.58);	
+		--very-light-grey: hsla(0, 0%, 100%, 0.274);
+		--light-grey: hsla(344, 100%, 100%, 0.58);	
 }
 
 
@@ -16,7 +16,7 @@ body {
 
 .post-container {
 	width: 80%;
-	margin: 0 auto;
+	margin: 0 auto 2rem;
 	padding: 0 2rem;
 	padding-bottom: 2rem;
 	background-color: white;
@@ -33,7 +33,6 @@ body {
 	padding: 0 .5rem;
 	border: .1rem solid #ccc;
 	border-radius: .3rem;
-/*	padding: 1rem 10rem;*/
 }
 
 .form-title:focus {
@@ -46,26 +45,23 @@ body {
 
 .form-image {
 	width: 100%;
-/*	height: 2.5rem;*/
 	margin-bottom: 2rem;
-/*	padding: 0 .5rem;*/
 	border: .1rem solid #ccc;
 	border-radius: .3rem;
-/*	padding: 1rem 10rem;*/
 }
 
 .form-image::file-selector-button {
-  border: none;
-  background: #ccc;
-  padding: .7rem .7rem;
-  margin-right: 1.5rem;
-  color: #fff;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
+	border: none;
+	background: #ccc;
+	padding: .7rem .7rem;
+	margin-right: 1.5rem;
+	color: #fff;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
 }
 
 .form-image::file-selector-button:hover {
-  background-color: #ddd;
+  	background-color: #ddd;
 }
 
 .btn-publish {
@@ -76,10 +72,14 @@ body {
 	margin-left: 25%;
 	width: 50%;
 	border-radius: .3rem;
-  	background: #2e2e2e;
+  	background: orangered;
   	padding: .7rem .7rem;
   	color: #fff;
   	cursor: pointer;
   	transition: background .2s ease-in-out;  	
 
+}
+
+.btn-publish:hover {
+/*		background: orangered;*/
 }

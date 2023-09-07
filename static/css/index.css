@@ -50,7 +50,7 @@ body {
     background: linear-gradient(to right, var(--orange), var(--red));
     color: var(--white);
     padding: 10rem 0 7rem 0 ;
-    border-radius: 0 0 0 5rem;
+    border-radius: 0 0 0 10rem;
 }
 
 .welcome {

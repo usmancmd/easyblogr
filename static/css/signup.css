@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5rem 0;
     height: 100vh;
 }
 
@@ -33,6 +34,12 @@ body {
     background-color: white;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.form-title {
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
 
 .form-label {
     margin-bottom: 1rem;
@@ -50,11 +57,33 @@ body {
     border: .1rem solid #ccc;
     border-radius: .3rem;
     font-size: 16px;
+    font-family: 'Source Sans Pro';
     padding: 0 .5rem;
 }
 
 .form .input-control:focus {
     outline: .2rem solid #FFD580;
+}
+
+.form-image {
+    width: 100%;
+    height: 2rem;
+    border: .1rem solid #ccc;
+    border-radius: .3rem;
+}
+
+.form-image::file-selector-button {
+    border: none;
+    background: #ccc;
+    padding: .7rem .7rem;
+    margin-right: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+.form-image::file-selector-button:hover {
+    background-color: #ddd;
 }
 
 div .btn-signup {
@@ -69,9 +98,11 @@ div .btn-signup {
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    font-family: 'Source Sans Pro';
     cursor: pointer;
 }
 
 .button[type="submit"]:hover {
   background-color: #FF994E;
 }
+
