@@ -23,12 +23,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0;
+    margin: 1rem 0;
     height: 100vh;
 }
 
 .container {
-    padding: 2rem;
+    padding: 1rem 2rem;
     border-radius: .5rem;
     border: .1px solid #ddd;
     background-color: white;
@@ -80,6 +80,10 @@ body {
     color: #fff;
     cursor: pointer;
     transition: background .2s ease-in-out;
+}
+
+.form-image::file-selector-button {
+    place-content: 'hello';
 }
 
 .form-image::file-selector-button:hover {
