@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts.css') }}">
+{% endblock %}
+
+{% block body %}
+	<!-- <h2>Contacts</h2> -->
+	<div class="contacts-container">
+		<div class="contacts">
+			<a href="#"><img class="contacts-icon" src="{{ url_for('static', filename='images/icon-facebook.svg') }}"></a> 
+			<a href="#"><img class="contacts-icon" src="{{ url_for('static', filename='images/icon-instagram.svg') }}"></a>
+			<a href="#"><img class="contacts-icon" src="{{ url_for('static', filename='images/icon-pinterest.svg') }}"></a>
+			<a href="#"><img class="contacts-icon" src="{{ url_for('static', filename='images/icon-twitter.svg') }}"></a>
+			<a href="#"><img class="contacts-icon" src="{{ url_for('static', filename='images/icon-youtube.svg') }}"></a>
+		</div>
+	</div>
+
+{% endblock %}

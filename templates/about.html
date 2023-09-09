@@ -1,3 +1,51 @@
 {% extends 'base.html' %}
 
-<h2>hello world</h2>
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="about-container">
+		<h2 style="text-align: center;">Welcome to our free and open platform</h2>
+		<div class="about-content">
+			<p>
+				We're thrilled to provide a space where individuals from all walks of life can come together to explore, express, and connect through the power of words.
+
+				At EasyBlogr, we believe that everyone has a story to tell and unique perspectives to share. Whether you're an aspiring writer, an avid reader, or simply someone who enjoys thought-provoking content, our platform is designed to empower and inspire you.
+				<br>
+				<h4>For Readers:</h4>
+				Discover a world of captivating articles, engaging stories, and informative pieces written by talented individuals just like you. Immerse yourself in a diverse range of topics, from technology and science to art, culture, and beyond. Our user-friendly interface makes it easy to navigate, explore, and bookmark your favorite articles for future reference.
+				<br>
+				<h2>For Writers:</h2>
+				Calling all writers! Our platform offers you the opportunity to unleash your creativity and reach a global audience. Share your thoughts, experiences, and expertise with readers who are eager to learn and engage. Whether you're a seasoned writer or just starting your journey, our platform provides the tools and support you need to bring your ideas to life.
+
+				We cherish the principles of openness and inclusivity. Everyone is welcome to participate, regardless of their background, age, or experience level. We encourage respectful discussions, constructive feedback, and the exchange of ideas that foster growth and understanding.
+
+				Our mission is to foster a vibrant community of readers and writers, where connections are formed, ideas are shared, and inspiration is sparked. We're committed to providing a safe and supportive environment that encourages creativity, collaboration, and personal growth.
+
+				Join us on this exciting journey of discovery, knowledge, and storytelling. Together, let's celebrate the power of words and create a platform where voices can be heard, stories can be shared, and connections can be made.
+
+				Start exploring, start writing, and let your voice be heard on EasyBlogr - the free and open platform for readers and writers.
+			</p>
+
+			<p>
+				<br>
+				<h4>Why We're Free:</h4>
+				We believe that access to information and the opportunity to express oneself should be available to everyone, regardless of financial constraints. That's why our blog app is completely free to use. We want to break down barriers and ensure that anyone with a passion for writing or a thirst for knowledge can participate in our community without any financial burdens.
+				<br>
+				<h4>Why We're Free:</h4>
+				Open Platform for Readers:
+				Our blog app is designed to be an inclusive space where readers can freely explore a wide range of content. We strive to offer diverse perspectives, covering a multitude of topics, genres, and writing styles. From personal essays and opinion pieces to informative articles and creative storytelling, there's something for every reader's interest. We aim to foster a love for reading, encourage intellectual curiosity, and provide a platform for readers to engage with the content they enjoy.
+
+				<br>
+				<h4>Open Platform for Writers:</h2>
+				For writers, our blog app offers a unique opportunity to showcase their talent, expand their reach, and connect with a global audience. Whether you're a professional writer looking to share your expertise or an aspiring writer honing your skills, our platform welcomes you. We provide a user-friendly interface for writing and publishing, along with tools to format, edit, and enhance your content. Our goal is to empower writers to express themselves freely, receive valuable feedback, and build their own community of readers.
+
+				<br>
+				<h2>Collaborative Environment:</h2>
+				Collaboration is at the heart of our blog app. We encourage writers to engage with readers, spark discussions, and exchange ideas in the comments section of each post. We believe that the true value of writing lies in its ability to connect people, inspire conversations, and foster a sense of community. By facilitating interactions between writers and readers, we aim to create a dynamic and supportive environment that enriches the experience for everyone involved.
+			</p>
+		</div>
+	</div>
+{% include 'footer.html' %}
+{% endblock %}
