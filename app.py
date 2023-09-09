@@ -199,7 +199,6 @@ def dashboard():
 
 @app.route('/about')
 def about():
-	# search = SearchForm()
 	return render_template('about.html')
 
 
@@ -227,23 +226,10 @@ def read_more(id):
 	# get the post to read
 	post = Posts.query.get_or_404(id)
 
-	# get all comments for a particular posts
-	# comments = Comments.query.filter_by(post_id=post.id).all()
-
 	# get author profile pic for post
 	author_image = Users.query.filter_by(id=post.author_id).value(Users.profile_pic)
 
-	# get commeter profile pic for comment
-	# commenter_image = Users.query.filter_by(id=comments.commenter_id).value(Users.profile_pic)
-
-	# results = db.session.query(Comments, Users).join(Users, Comments.post_id)
-
-
-	# comments_details = db.session.query(Comments, Users.fullname, Users.profile_pic).\
-    #        join(Users, Comments.commenter_id == Users.id).\
-    #        outerjoin(Posts, Comments.post_id == Posts.id).\
-    #        all()
-
+	# get comment details for a particular post rendered
 	comments_details = db.session.query(Comments, Users.fullname, Users.profile_pic).\
 		join(Users, Comments.commenter_id == Users.id).\
 		outerjoin(Posts, Comments.post_id == Posts.id).\
@@ -281,49 +267,39 @@ def read_more(id):
 def profile():
 	from models_sqlite import Users
 	form = SignupForm()
-	# user_to_update = Users.query.get_or_404(current_user.id)
-	user_to_update = Users.query.get(current_user.id)
+	id = current_user.id
+	user_to_update = Users.query.get_or_404(id)
+
 	if request.method == 'POST':
 		# firstname = request.form.get('firstname', '')
 		# lastname = request.form.get('lastname', '')
 		# fullname = f'{firstname} {lastname}'
 
 		# user_to_update.fullname = fullname
-		user_to_update.username = request.form.get('username', '')
-		# user_to_update.email = request.form.get('email', '')
-		user_to_update.about_author = request.form.get('about_author', '')
+		# new_username = request.form.get('username', '')
 
-		if form.profile_pic.data:
-			user_to_update.profile_pic = save_profile_image(request.files.get('profile_pic', ''))
+		user_to_update.about_author = request.form['about_author']
 
-			try:
-				db.session.commit()
-				flash("User Updated Successfully!")
-				return render_template('profile.html', form=form, user_to_update=user_to_update)
+		# if request.files:
+		# 	user_to_update.profile_pic = save_profile_image(request.files['profile_pic']
+
+			# user_id = Users.query.filter_by(id=current_user.id).value(Users.id)
+			# user_to_update = Users.query.filter_by(id=user_id).update({'username': new_username, 'about_author': new_about_author, 'profile_pic': new_profile_pic})
 			
-			except Exception as e:
-				db.session.rollback()
-				error = str(e)
-				return render_template('profile.html', form=form, user_to_update=user_to_update, error=error)	
+		try:
+			db.session.add(user_to_update)
+			db.session.commit()
+			flash("User Updated Successfully!")
+			return render_template('profile.html', form=form, user_to_update=user_to_update)
+		
+		except Exception as e:
+			db.session.rollback()
+			error = str(e)
+			return render_template('profile.html', form=form, user_to_update=user_to_update, error=error)	
 
 	
 	else:
-		return render_template('profile.html', form=form, user_to_update=user_to_update)
-
-
-
-	# user_to_update = Users.query.get_or_404(current_user.id)
-	# fullname = user_to_update.fullname
-	# form.firstname.data = fullname.split()[0]
-	# form.lastname.data = fullname.split()[1]
-	# form.username.data = user_to_update.username
-	# form.email.data = user_to_update.email
-	# form.about_author.data = user_to_update.about_author
-	# form.profile_pic.data = user_to_update.profile_pic
-
-	# form.profile_pic.data = os.path.join(current_app.root_path, 'static/profile_img', profile_pic)
-		
-
+		return render_template('profile.html', form=form)
 
 
 @app.route('/profile/<int:id>')
