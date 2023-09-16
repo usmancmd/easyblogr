@@ -6,7 +6,7 @@ Easyblogr
 ## Introduction
 EasyBlogr is a simple and user-friendly blog app designed to help users easily create, manage, and share their blog posts. This project serves as a portfolio example to showcase my skills in full-stack web development using Flask, Flask-SQLAlchemy, Jinja2 and other related technologies.
 
-![logo](./static/readme_img/logo.png)
+![logo](static\readme_img\logo.png)
 <img src="static/readme_img/logo.png"/>
 
 ## Inspiration and Technical Challenge
