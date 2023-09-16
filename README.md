@@ -6,8 +6,7 @@ Easyblogr
 ## Introduction
 EasyBlogr is a simple and user-friendly blog app designed to help users easily create, manage, and share their blog posts. This project serves as a portfolio example to showcase my skills in full-stack web development using Flask, Flask-SQLAlchemy, Jinja2 and other related technologies.
 
-![logo](static\readme_img\logo.png)
-<img src="static/readme_img/logo.png"/>
+![logo](https://github.com/usmancmd/easyblogr/assets/110719750/36fcee56-5d1a-442e-b75d-cacbfeed063a)
 
 ## Inspiration and Technical Challenge
 This project was inspired by my passion for both reading and writing. I wanted to create a blog application that caters to the needs of both readers and writers, providing a seamless platform for sharing and discovering engaging content.
@@ -68,10 +67,9 @@ To set up the Blog App locally for development or testing purposes, follow these
 ## Screenshots
 Here are some screenshots showcasing different aspects of the Blog App:
 
-![landing page](static/readme_img/'landing.png')
+![landing](https://github.com/usmancmd/easyblogr/assets/110719750/7c0ea1bb-b1d9-4f44-8155-522e25309914)
 
-![Blogs page](static/readme_img/.png)
-
+![blogs](https://github.com/usmancmd/easyblogr/assets/110719750/12d7be7e-4adf-4b03-9985-2ceed52857cc)
 
 ## Contributing
 Feel free to contribute to the blog app project. Your contributions are highly appreciated and welcomed. Together, we can make this blog app even better. No contribution is too small! Whether it's fixing a typo, improving the documentation, or implementing a new feature, every contribution counts and is highly appreciated.
